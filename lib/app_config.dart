@@ -37,7 +37,7 @@ class AppConfig {
           ? app_name_ar
           : app_name_en;
 
-  static bool isDebugMode = kDebugMode;
+  static bool isDebugMode = false;
   static bool turnDevicePreviewOn = isDebugMode;
 
   /// This get the name of the application in appLocal
