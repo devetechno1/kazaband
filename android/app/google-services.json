@@ -1,0 +1,166 @@
+{
+  "project_info": {
+    "project_number": "713180579945",
+    "project_id": "kazaband-d01b9",
+    "storage_bucket": "kazaband-d01b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713180579945:android:133803732d21ed67fcbaf8",
+        "android_client_info": {
+          "package_name": "com.devetechno.kazaband2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713180579945-9bor35gf6t1bqv34hgaubga3d8c56cpf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devetechno.kazaband2",
+            "certificate_hash": "4bddd1948aa6e5cccc7c6a098072e48b192b7aad"
+          }
+        },
+        {
+          "client_id": "713180579945-gt5hs1lnih99cuck151bad5bgagg6571.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devetechno.kazaband2",
+            "certificate_hash": "9e0890822fd32915c1efc0e142fa1ea4a1f6a38b"
+          }
+        },
+        {
+          "client_id": "713180579945-gnldqn8m7iuo91vbdd2r6h9910o4q6jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8cKzK8QWH4qyFjsJIO8VJfQNBeAQ_-KM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713180579945-9g1k5ph534ku35heflau5h66n4cklago.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "713180579945-g9sts4vl1aelagulr90rhrpdjeplhv7k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.niletouch.kazaband"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713180579945:android:e6f49a3141ac611bfcbaf8",
+        "android_client_info": {
+          "package_name": "com.kazaband.kazaband"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713180579945-cqpelj4iics6an269khb83gmp0p7pfa8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kazaband.kazaband",
+            "certificate_hash": "b70b3f38e57599ab7e8c2b76f150aa68e0f75b57"
+          }
+        },
+        {
+          "client_id": "713180579945-pcsk94u1db7ivo3l2pkknddfmbbgnfr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kazaband.kazaband",
+            "certificate_hash": "262df7816afa8edee1331756216e645155a20ae6"
+          }
+        },
+        {
+          "client_id": "713180579945-gnldqn8m7iuo91vbdd2r6h9910o4q6jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8cKzK8QWH4qyFjsJIO8VJfQNBeAQ_-KM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713180579945-9g1k5ph534ku35heflau5h66n4cklago.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "713180579945-g9sts4vl1aelagulr90rhrpdjeplhv7k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.niletouch.kazaband"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713180579945:android:bf4463f5cd0ba84ffcbaf8",
+        "android_client_info": {
+          "package_name": "com.niletouch.kazaband"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713180579945-2e7g3odjkdsedpfr2u6uop8go98cf79p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.niletouch.kazaband",
+            "certificate_hash": "a71d47c7b948faba13e2aa08c60e37d1e4795654"
+          }
+        },
+        {
+          "client_id": "713180579945-jrbr924tj2dpuj75scsedpal3av8kgil.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.niletouch.kazaband",
+            "certificate_hash": "b6744b14bc371d1cc96a21910adf35cae4fbbd9b"
+          }
+        },
+        {
+          "client_id": "713180579945-gnldqn8m7iuo91vbdd2r6h9910o4q6jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8cKzK8QWH4qyFjsJIO8VJfQNBeAQ_-KM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713180579945-9g1k5ph534ku35heflau5h66n4cklago.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "713180579945-g9sts4vl1aelagulr90rhrpdjeplhv7k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.niletouch.kazaband"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
