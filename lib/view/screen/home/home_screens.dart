@@ -35,6 +35,7 @@ import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/featured_dea
 import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/featured_product_view.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/home/shimmer/flash_deal_shimmer.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/flash_deals_view.dart';
+import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/floating_button_whatsapp.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/footer_banner.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/home_category_product_view.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/home/widget/latest_product_view.dart';
@@ -83,7 +84,7 @@ class _HomePageState extends State<HomePage> {
 
     }
      var popupbann = Provider.of<BannerProvider>(Get.context!, listen: false).popupBanner;
-    if(popupbann != null &&  popupbann!.isNotEmpty){
+    if(popupbann != null &&  popupbann.isNotEmpty){
       showAnimatedDialog(context, PopupBannerDialog(), dismissible: false, isFlip: true);
     }
      // Consumer<BannerProvider>(builder: (context, footerBannerProvider, child){
@@ -117,6 +118,8 @@ class _HomePageState extends State<HomePage> {
 
 
    return Scaffold(
+floatingActionButton: whatsappFloatingButtonWidget(context),
+//floatingActionButtonLocation: FloatingActionButtonLocation.miniStartFloat,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: RefreshIndicator(
@@ -225,15 +228,15 @@ class _HomePageState extends State<HomePage> {
                       builder: (context, featured,_) {
                         return  featured.featuredProductList != null? featured.featuredProductList!.isNotEmpty ?
                         Stack(children: [
-                            Padding(padding: const EdgeInsets.only(left: 50, bottom: 25),
+                            Padding(padding: const EdgeInsetsDirectional.only(start: 50, bottom: 25),
                               child: Container(width: MediaQuery.of(context).size.width,
                                 height: MediaQuery.of(context).size.width-50,
-                                decoration: BoxDecoration(borderRadius: const BorderRadius.only(topLeft : Radius.circular(Dimensions.paddingSizeDefault),
-                                      bottomLeft: Radius.circular(Dimensions.paddingSizeDefault)),
+                                decoration: BoxDecoration(borderRadius: const BorderRadiusDirectional.only(topStart : Radius.circular(Dimensions.paddingSizeDefault),
+                                      bottomStart: Radius.circular(Dimensions.paddingSizeDefault)),
                                 color: Theme.of(context).colorScheme.onSecondaryContainer),)),
                             Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                                 Padding(padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtraSmall,vertical: Dimensions.paddingSizeExtraSmall),
-                                  child: Padding(padding: const EdgeInsets.only(top: 20, left: 50,bottom: Dimensions.paddingSizeSmall),
+                                  child: Padding(padding: const EdgeInsetsDirectional.only(top: 20, start: 50,bottom: Dimensions.paddingSizeSmall),
                                       child: TitleRow(title: getTranslated('featured_products', context),
                                           onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (_) => AllProductScreen(productType: ProductType.featuredProduct))))),
                                 ),

@@ -1,36 +1,24 @@
-buildscript {
-    ext.kotlin_version = '1.8.0'
-    repositories {
-        google()
-        jcenter()
-    }
+// build.gradle (allprojects)
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
-        classpath 'com.google.gms:google-services:4.3.10'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
+// Set up repositories for dependencies
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
-    tasks.withType(JavaCompile) {
-        options.compilerArgs << '-Xlint:-options'
+    // Set the build directory
+    rootProject.buildDir = '../build'
+
+    // Configure subprojects
+    subprojects {
+        project.buildDir = "${rootProject.buildDir}/${project.name}"
     }
-}
 
-rootProject.buildDir = '../build'
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(':app')
-}
+    // Ensure evaluation depends on the app module
+    subprojects {
+        project.evaluationDependsOn(':app')
+    }
 
-tasks.register("clean", Delete) {
-    delete rootProject.buildDir
+
 }

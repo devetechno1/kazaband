@@ -4,6 +4,7 @@ import 'package:flutter_sixvalley_ecommerce/provider/cart_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/notification_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/wallet_transaction_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
+import 'package:flutter_sixvalley_ecommerce/view/basewidget/delete_account_bottom_sheet.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/logout_confirm_bottom_sheet.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/auth/auth_screen.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/chat/inbox_screen.dart';
@@ -130,6 +131,7 @@ class _MoreScreenState extends State<MoreScreen> {
 
                         TitleButton(image: Images.settings, title: getTranslated('settings', context),
                             navigateTo: const SettingsScreen()),
+                            
 
 
                       ],),),
@@ -191,7 +193,19 @@ class _MoreScreenState extends State<MoreScreen> {
                           TitleButton(image: Images.user, title: getTranslated('about_us', context),
                               navigateTo: HtmlViewScreen(title: getTranslated('about_us', context),
                                 url: Provider.of<SplashProvider>(context, listen: false).configModel!.aboutUs,)),
-
+                          if(Provider.of<AuthProvider>(context, listen: false).isLoggedIn()) 
+                            InkWell(
+                              onTap: () => showModalBottomSheet(backgroundColor: Colors.transparent,
+                                  context: context, builder: (_)=>  DeleteAccountBottomSheet(customerId: Provider.of<ProfileProvider>(context, listen: false).userID)),
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 17, vertical: Dimensions.paddingSizeTwelve),
+                                child: Row(children: [
+                                  SizedBox(height: Dimensions.iconSizeDefault,child: Image.asset(Images.delete, color: Theme.of(context).colorScheme.error),),
+                                  const SizedBox(width: 17),
+                                  Text(getTranslated('delete_account', context)!,),
+                                ],),
+                              ),
+                            )
 
 
                         ],),),
@@ -247,7 +261,8 @@ class SquareButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => navigateTo)),
-      child: Column(children: [
+      child: Column(
+        children: [
         Padding(padding: const EdgeInsets.all(8.0),
           child: Container(width: 120, height: 90,
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(10),
@@ -270,7 +285,7 @@ class SquareButton extends StatelessWidget {
 
                 if(isWallet)
                   Positioned(right: 10,bottom: 10,
-                    child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                    child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                       Text(getTranslated(subTitle, context)??'', style: textRegular.copyWith(color: Colors.white),),
                       isLoyalty? Text(balance != null? balance!.toStringAsFixed(0) : '0',
                         style: textMedium.copyWith(color: Colors.white)):

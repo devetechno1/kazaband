@@ -6,6 +6,7 @@ import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/auth/widget/code_picker_widget.dart';
 import 'package:provider/provider.dart';
+import 'package:intl/intl.dart' as intl;
 
 
 class CustomTextField extends StatefulWidget {
@@ -44,10 +45,11 @@ class CustomTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final Function(CountryCode countryCode)? onCountryChanged;
   final bool required;
+  final TextDirection? textDirection;
 
   const CustomTextField({
     super.key,
-    this.hintText = 'Write something...',
+    this.hintText = '',
     this.controller,
     this.focusNode,
     this.titleText,
@@ -80,6 +82,7 @@ class CustomTextField extends StatefulWidget {
     this.labelText,
     this.textAlign = TextAlign.start,
      this.required = false, this.suffixOnTap, this.prefixOnTap,
+      this.textDirection,
   });
 
   @override
@@ -88,6 +91,7 @@ class CustomTextField extends StatefulWidget {
 
 class _CustomTextFieldState extends State<CustomTextField> {
   bool _obscureText = true;
+  late TextDirection? textDirection = widget.textDirection;
 
   @override
   Widget build(BuildContext context) {
@@ -121,6 +125,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
           textCapitalization: widget.capitalization,
           enabled: widget.isEnabled,
           autofocus: false,
+          textDirection: textDirection, 
           autofillHints: widget.inputType == TextInputType.name ? [AutofillHints.name]
               : widget.inputType == TextInputType.emailAddress ? [AutofillHints.email]
               : widget.inputType == TextInputType.phone ? [AutofillHints.telephoneNumber]
@@ -176,29 +181,25 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ) :
             widget.showCodePicker ? SizedBox(
                 width: 90,
-                child: Row(children: [
-                    CodePickerWidget(
-                      padding: const EdgeInsets.only(left: Dimensions.paddingSizeSmall),
-                        flagWidth: 25,
-                        onChanged: widget.onCountryChanged,
-                        initialSelection: widget.countryDialCode,
-                        favorite: [widget.countryDialCode != null ? widget.countryDialCode! : 'BD'],
-                        showDropDownButton: true,
-                        showCountryOnly: false,
-                        showOnlyCountryWhenClosed: false,
-                        showFlagDialog: true,
-                        hideMainText: false,
-                        showFlagMain: false,
-                        dialogBackgroundColor: Theme.of(context).cardColor,
-                        barrierColor: Provider.of<ThemeProvider>(context).darkTheme ? Colors.black.withOpacity(0.4) : null,
-                        textStyle: textRegular.copyWith(
-                          fontSize: Dimensions.fontSizeLarge,
-                          color: Theme.of(context).textTheme.bodyLarge!.color,
-                        ),
-                      ),
-                   // Text(widget.countryDialCode??'', style: textRegular.copyWith(fontSize: Dimensions.fontSizeDefault),),
-                  ],
-                ))
+                child: CodePickerWidget(
+                  padding: const EdgeInsetsDirectional.only(start: Dimensions.paddingSizeSmall),
+                    flagWidth: 25,
+                    onChanged: widget.onCountryChanged,
+                    initialSelection: widget.countryDialCode,
+                    favorite: [widget.countryDialCode != null ? widget.countryDialCode! : 'BD'],
+                    showDropDownButton: true,
+                    showCountryOnly: false,
+                    showOnlyCountryWhenClosed: false,
+                    showFlagDialog: true,
+                    hideMainText: false,
+                    showFlagMain: false,
+                    dialogBackgroundColor: Theme.of(context).cardColor,
+                    barrierColor: Provider.of<ThemeProvider>(context).darkTheme ? Colors.black.withOpacity(0.4) : null,
+                    textStyle: textRegular.copyWith(
+                      fontSize: Dimensions.fontSizeLarge,
+                      color: Theme.of(context).textTheme.bodyLarge!.color,
+                    ),
+                  ))
                 : null,
             suffixIcon: widget.isPassword ? IconButton(
               icon: Icon(_obscureText ? Icons.visibility_off : Icons.visibility, color: Theme.of(context).hintColor.withOpacity(0.5)),
@@ -207,7 +208,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 child: InkWell(onTap: widget.suffixOnTap,child: Image.asset(widget.suffixIcon!, color: Theme.of(context).hintColor,)),
               )) : null),
           onFieldSubmitted: (text) => widget.nextFocus != null ? FocusScope.of(context).requestFocus(widget.nextFocus) : null,
-          onChanged: widget.onChanged,
+          onChanged: (val){
+            if(widget.textDirection == null){
+              textDirection = intl.Bidi.detectRtlDirectionality(val) ? TextDirection.rtl : TextDirection.ltr;
+              setState(() {
+                
+              });
+            }
+            widget.onChanged?.call(val);
+          } ,
         ),
       ],
     );

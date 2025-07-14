@@ -27,6 +27,7 @@ class ProductWidget extends StatelessWidget {
         ));
       },
       child: Container(
+        height: 300,
         margin: const EdgeInsets.all(5),
         padding: const EdgeInsets.only(bottom: Dimensions.paddingSizeSmall),
         decoration: BoxDecoration(
@@ -36,7 +37,7 @@ class ProductWidget extends StatelessWidget {
         ),
         child: Stack(children: [
           Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            Container(height: 140, decoration: BoxDecoration(
+            Container(height: 138, decoration: BoxDecoration(
                 color: Provider.of<ThemeProvider>(context, listen: false).darkTheme? Theme.of(context).primaryColor.withOpacity(.05) : ColorResources.getIconBg(context),
                 borderRadius: const BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),),
               child: ClipRRect(

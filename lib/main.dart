@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_downloader/flutter_downloader.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_sixvalley_ecommerce/notification/model/notification_body.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/facebook_login_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/featured_deal_provider.dart';
@@ -66,7 +65,6 @@ Future<void> main() async {
     }
   });
 
-  FlutterNativeSplash.remove();
 
   NotificationBody? body;
   try {

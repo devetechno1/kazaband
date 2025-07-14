@@ -9,9 +9,6 @@ import 'package:flutter_sixvalley_ecommerce/main.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/animated_custom_dialog.dart';
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/order_place_success_dialog.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/dashboard/dashboard_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/wallet/wallet_screen.dart';
-import 'package:flutter_sixvalley_ecommerce/view/screen/wallet/wallet_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class PaymentScreen extends StatefulWidget {
@@ -66,16 +63,18 @@ class PaymentScreenState extends State<PaymentScreen> {
       ),
       onRefresh: () async {
         if (Platform.isAndroid) {
-          browser.webViewController.reload();
+          browser.webViewController?.reload();
         } else if (Platform.isIOS) {
-          browser.webViewController.loadUrl(urlRequest: URLRequest(url: await browser.webViewController.getUrl()));
+          browser.webViewController?.loadUrl(urlRequest: URLRequest(url: await browser.webViewController?.getUrl()));
         }
       },
     );
-    browser.pullToRefreshController = pullToRefreshController;
+    // browser.pullToRefreshController = pullToRefreshController;
+    browser = MyInAppBrowser(context,pullToRefreshController: pullToRefreshController);
+
 
     await browser.openUrlRequest(
-      urlRequest: URLRequest(url: Uri.parse(selectedUrl!)),
+      urlRequest: URLRequest(url: WebUri(selectedUrl!)),
       options: InAppBrowserClassOptions(
         inAppWebViewGroupOptions: InAppWebViewGroupOptions(
           crossPlatform: InAppWebViewOptions(useShouldOverrideUrlLoading: true, useOnLoadResource: true),
@@ -134,8 +133,9 @@ class MyInAppBrowser extends InAppBrowser {
   MyInAppBrowser(this.context, {
     int? windowId,
     UnmodifiableListView<UserScript>? initialUserScripts,
+    PullToRefreshController? pullToRefreshController,
   })
-      : super(windowId: windowId, initialUserScripts: initialUserScripts);
+      : super(windowId: windowId, initialUserScripts: initialUserScripts,pullToRefreshController: pullToRefreshController);
 
   bool _canRedirect = true;
 

@@ -63,7 +63,7 @@ class ReferHintView extends StatelessWidget {
                         blurRadius: 6, offset: const Offset(0, 3),
                       )]
                   ),
-                  child: Text('${hintList.indexOf(hint) + 1}',style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge,)),
+                  child: Text('${hintList.indexOf(hint) + 1}',style: robotoBold.copyWith(fontSize: Dimensions.fontSizeLarge,color: Theme.of(context).colorScheme.surface)),
                 ),
                 const SizedBox(width: Dimensions.paddingSizeSmall,),
 

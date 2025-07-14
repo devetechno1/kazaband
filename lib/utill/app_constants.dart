@@ -180,9 +180,6 @@ static const String otpVerificationForDigitalProduct = '/api/v1/customer/order/d
 
   static List<LanguageModel> languages = [
     // LanguageModel(imageUrl: Images.en, languageName: 'English', countryCode: 'US', languageCode: 'en'),
-    LanguageModel(imageUrl: Images.ar, languageName: 'Arabic', countryCode: 'EG', languageCode: 'ar'),
-    //LanguageModel(imageUrl: Images.hi, languageName: 'Hindi', countryCode: 'IN', languageCode: 'hi'),
-    //LanguageModel(imageUrl: Images.bn, languageName: 'Bangla', countryCode: 'BD', languageCode: 'bn'),
-    //LanguageModel(imageUrl: Images.es, languageName: 'Spanish', countryCode: 'ES', languageCode: 'es'),
+    LanguageModel(imageUrl: Images.ar, languageName: 'عربي', countryCode: 'EG', languageCode: 'ar'),
   ];
 }

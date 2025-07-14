@@ -19,7 +19,7 @@ class CustomExitCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(20)),),
         const SizedBox(height: 30,),
         Padding(padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeDefault),
-          child: SizedBox(width: 60,child: Image.asset(Images.exitIcon)),),
+          child: SizedBox(width: 60,child: Image.asset(Images.exitIcon,color: Theme.of(context).primaryColor)),),
         const SizedBox(height: Dimensions.paddingSizeExtraSmall,),
 
         Text(getTranslated('close_the_app', context)!, style: textBold.copyWith(fontSize: Dimensions.fontSizeLarge),),

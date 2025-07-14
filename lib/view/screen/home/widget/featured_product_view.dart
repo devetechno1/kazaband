@@ -28,7 +28,7 @@ class FeaturedProductView extends StatelessWidget {
             Column(children: [
 
               productList != null? productList.isNotEmpty ?
-              isHome? Padding(padding: const EdgeInsets.only(left: Dimensions.paddingSizeDefault),
+              isHome? Padding(padding: const EdgeInsetsDirectional.only(start: Dimensions.paddingSizeDefault),
                 child: CarouselSlider.builder(
                   options: CarouselOptions(
                     viewportFraction: .5,

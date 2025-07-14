@@ -39,13 +39,14 @@ class CategoryView extends StatelessWidget {
         ) :
         SizedBox( //height: 120,
           child:  GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3, // number of items in each row
-              mainAxisSpacing:0, // spacing between rows
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4, // number of items in each row
+              childAspectRatio: 0.95,
+              mainAxisSpacing:30, // spacing between rows
               crossAxisSpacing: 0, // spacing between columns
             ),
-            physics: NeverScrollableScrollPhysics(),
-            padding: EdgeInsets.zero,
+            physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(10),
             scrollDirection: isHomePage ? Axis.horizontal :Axis.vertical,
             itemCount: categoryProvider.categoryList.length,
             shrinkWrap: true,

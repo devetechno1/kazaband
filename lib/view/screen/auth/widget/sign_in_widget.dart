@@ -207,7 +207,7 @@ class SignInWidgetState extends State<SignInWidget> {
 
                 InkWell(
                   onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ForgetPasswordScreen())),
-                  child: Text('${getTranslated('forget_password', context)!}?',
+                  child: Text(getTranslated('forget_password_?', context)!,
                       style: titilliumRegular.copyWith(
                       color: ColorResources.getPrimary(context))),
                 ),
@@ -240,20 +240,12 @@ class SignInWidgetState extends State<SignInWidget> {
                       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const DashBoardScreen()), (route) => false);
                     }
                   },
-                  child: Container(
-
-                    width: double.infinity, height: 40, alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: Colors.transparent, borderRadius: BorderRadius.circular(6),),
-                    child: Row(mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-
-                        Text(getTranslated('continue_as', context)!, style: titleRegular.copyWith(color: ColorResources.getHint(context))),
-                        const SizedBox(width: Dimensions.paddingSizeExtraSmall,),
-                        Text(getTranslated('guest', context)!, style: titleHeader),
-
-
-                      ],
+                  child: RichText(
+                    text: TextSpan(
+                        text: getTranslated('continue_as', context), style: titleRegular.copyWith(color: ColorResources.getHint(context)),
+                        children: [
+                          TextSpan(text: getTranslated('guest', context), style: titleHeader.copyWith(color: Theme.of(context).textTheme.bodyLarge?.color)),
+                        ]
                     ),
                   ),
                 );

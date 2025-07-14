@@ -24,7 +24,7 @@ class NotLoggedInBottomSheet extends StatelessWidget {
         ),),
         const SizedBox(height: 40,),
         Padding(padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeDefault),
-          child: SizedBox(width: 60,child: Image.asset(Images.loginIcon)),),
+          child: SizedBox(width: 60,child: Image.asset(Images.loginIcon,color: Theme.of(context).primaryColor)),),
 
         const SizedBox(height: Dimensions.paddingSizeExtraSmall,),
         Text(getTranslated('please_login', context)!, style: textBold.copyWith(fontSize: Dimensions.fontSizeLarge),),

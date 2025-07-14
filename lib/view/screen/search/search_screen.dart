@@ -106,39 +106,39 @@ class _SearchScreenState extends State<SearchScreen> {
                         }
                     ),
 
-                  Padding(padding: const EdgeInsets.only(top: Dimensions.paddingSizeDefault,left: Dimensions.paddingSizeDefault,right: Dimensions.paddingSizeDefault),
-                    child: Text(getTranslated('popular_tag', context)!, style: textMedium.copyWith(fontSize : Dimensions.fontSizeLarge)),),
+                  // Padding(padding: const EdgeInsets.only(top: Dimensions.paddingSizeDefault,left: Dimensions.paddingSizeDefault,right: Dimensions.paddingSizeDefault),
+                  //   child: Text(getTranslated('popular_tag', context)!, style: textMedium.copyWith(fontSize : Dimensions.fontSizeLarge)),),
 
 
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault),
-                    child: Consumer<SplashProvider>(
-                        builder: (context, popularTagProvider,_) {
-                          return Wrap(direction: Axis.horizontal, alignment : WrapAlignment.start,
-                            children: [for (int index = 0; index < popularTagProvider.configModel!.popularTags!.length; index++)
-                              Padding(padding:  const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeSmall),
-                                child: Container(decoration: BoxDecoration(
-                                    border: Border.all(width: .5, color: Theme.of(context).primaryColor.withOpacity(.125)),
-                                    borderRadius: const BorderRadius.all(Radius.circular(50))),
-                                  padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeSmall-3, horizontal: Dimensions.paddingSizeSmall),
-                                  margin: const EdgeInsets.only(right: Dimensions.paddingSizeSmall),
-                                  child: InkWell(onTap: () => Provider.of<SearchProvider>(context, listen: false).searchProduct(query : popularTagProvider.configModel!.popularTags![index].tag??'', offset: 1),
-                                    child: ConstrainedBox(constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width*0.85),
-                                      child: Row(mainAxisSize:MainAxisSize.min,children: [
-                                        Flexible(child: Text(popularTagProvider.configModel!.popularTags![index].tag??'',
-                                            style: textRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color),
-                                            overflow: TextOverflow.ellipsis)),
-
-                                      ]),
-                                    ),
-                                  ),
-                                ),
-                              )
-                            ],
-                          );
-                        }
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeDefault),
+                  //   child: Consumer<SplashProvider>(
+                  //       builder: (context, popularTagProvider,_) {
+                  //         return Wrap(direction: Axis.horizontal, alignment : WrapAlignment.start,
+                  //           children: [for (int index = 0; index < popularTagProvider.configModel!.popularTags!.length; index++)
+                  //             Padding(padding:  const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeSmall),
+                  //               child: Container(decoration: BoxDecoration(
+                  //                   border: Border.all(width: .5, color: Theme.of(context).primaryColor.withOpacity(.125)),
+                  //                   borderRadius: const BorderRadius.all(Radius.circular(50))),
+                  //                 padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeSmall-3, horizontal: Dimensions.paddingSizeSmall),
+                  //                 margin: const EdgeInsets.only(right: Dimensions.paddingSizeSmall),
+                  //                 child: InkWell(onTap: () => Provider.of<SearchProvider>(context, listen: false).searchProduct(query : popularTagProvider.configModel!.popularTags![index].tag??'', offset: 1),
+                  //                   child: ConstrainedBox(constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width*0.85),
+                  //                     child: Row(mainAxisSize:MainAxisSize.min,children: [
+                  //                       Flexible(child: Text(popularTagProvider.configModel!.popularTags![index].tag??'',
+                  //                           style: textRegular.copyWith(color: Theme.of(context).textTheme.bodyLarge!.color),
+                  //                           overflow: TextOverflow.ellipsis)),
+                  //
+                  //                     ]),
+                  //                   ),
+                  //                 ),
+                  //               ),
+                  //             )
+                  //           ],
+                  //         );
+                  //       }
+                  //   ),
+                  // ),
                   ],
                 );
 

@@ -18,7 +18,7 @@ class CategoryWidget extends StatelessWidget {
     return Padding(padding: EdgeInsets.only(left : Provider.of<LocalizationProvider>(context, listen: false).isLtr ? Dimensions.homePagePadding : 0,
         right: index+1 == length? Dimensions.paddingSizeDefault : Provider.of<LocalizationProvider>(context, listen: false).isLtr ? 0 : Dimensions.homePagePadding),
       child: Column( children: [
-        Container(height: 80, width: 80,
+        Container(height: 58, width: 80,
           decoration: BoxDecoration(
             border: Border.all(color: Theme.of(context).primaryColor.withOpacity(.125),width: .25),
             borderRadius: BorderRadius.circular(Dimensions.paddingSizeSmall),
@@ -32,13 +32,12 @@ class CategoryWidget extends StatelessWidget {
         ),
 
         const SizedBox(height: Dimensions.paddingSizeExtraSmall),
-        Center(child: SizedBox(width: 70,
+        Expanded(
             child: Text(category.name!, textAlign: TextAlign.center, maxLines: 2,
               overflow: TextOverflow.ellipsis,
-              style: titilliumRegular.copyWith(fontSize: Dimensions.fontSizeDefault,
+              style: titilliumRegular.copyWith(fontSize: 13,
                   color: ColorResources.getTextTitle(context))),
           ),
-        ),
 
       ]),
     );

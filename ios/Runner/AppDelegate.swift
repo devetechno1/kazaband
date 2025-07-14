@@ -6,7 +6,7 @@ import flutter_downloader
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-@UIApplicationMain
+@main
 @objc class AppDelegate: FlutterAppDelegate {
   override func application(
     _ application: UIApplication,

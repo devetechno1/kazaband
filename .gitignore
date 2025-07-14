@@ -5,9 +5,11 @@
 *.swp
 .DS_Store
 .atom/
+.build/
 .buildlog/
 .history
 .svn/
+.swiftpm/
 migrate_working_dir/
 
 # IntelliJ related
@@ -32,6 +34,11 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+.firebaserc
+firebase.json
+.firebase
+changes.tar
+changes.zip
 get_changed_files.sh
 
 # Web related
@@ -48,4 +55,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# form me
+# for test or work in app
+/test.json

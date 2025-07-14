@@ -14,7 +14,7 @@ class NotLoggedInWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Padding(padding: const EdgeInsets.symmetric(vertical: Dimensions.paddingSizeDefault),
-          child: SizedBox(width: 60,child: Image.asset(Images.loginIcon)),),
+          child: SizedBox(width: 60,child: Image.asset(Images.loginIcon,color: Theme.of(context).primaryColor)),),
         Text(getTranslated('please_login', context)!, style: textBold.copyWith(fontSize: Dimensions.fontSizeLarge),),
 
         Padding(padding: const EdgeInsets.only(top: Dimensions.paddingSizeSmall, bottom: Dimensions.paddingSizeLarge),
@@ -30,7 +30,7 @@ class NotLoggedInWidget extends StatelessWidget {
           child: Text(getTranslated('back_to_home', context)!,
             style: textRegular.copyWith(fontSize: Dimensions.fontSizeLarge,
                 color: Theme.of(context).primaryColor,
-                decoration: TextDecoration.underline),),
+                decoration: TextDecoration.underline,decorationColor: Theme.of(context).primaryColor),),
         ),
       ),
       ],

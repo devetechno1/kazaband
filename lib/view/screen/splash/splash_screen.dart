@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
 import 'package:flutter_sixvalley_ecommerce/notification/model/notification_body.dart';
@@ -113,8 +113,8 @@ class SplashScreenState extends State<SplashScreen> {
       key: _globalKey,
       body: Provider.of<SplashProvider>(context).hasConnection ?
       Center(child: Column(mainAxisSize: MainAxisSize.min, children: [
-        SizedBox(width: 100, child: Image.asset(Images.icon, width: 100.0)),
-        Text(AppConstants.appName,style: textRegular.copyWith(fontSize: Dimensions.fontSizeOverLarge, color: Colors.white)),
+        SizedBox(width: 100, child: Image.asset(Images.icon, width: 100.0,height: 100,)),
+        // Text(AppConstants.appName,style: textRegular.copyWith(fontSize: Dimensions.fontSizeOverLarge, color: Colors.white)),
         Padding(padding: const EdgeInsets.only(top: Dimensions.paddingSizeSmall),
             child: Text(AppConstants.slogan,style: textRegular.copyWith(fontSize: Dimensions.fontSizeDefault, color: Colors.white)))]),
       ) : const NoInternetOrDataScreen(isNoInternet: true, child: SplashScreen()),

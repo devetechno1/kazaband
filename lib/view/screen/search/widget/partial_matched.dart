@@ -116,7 +116,7 @@ class _SearchSuggestionState extends State<SearchSuggestion> {
                         borderRadius: BorderRadius.circular(Dimensions.paddingSizeSmall),
                         borderSide: BorderSide(color: Colors.grey[300]!),
                       ),
-                      hintText: getTranslated('search_hint', context)??'',
+                      hintText: getTranslated('search_something', context),
                      suffixIcon: SizedBox(width: controller.text.isNotEmpty? 70 : 50,
                        child: Row(
                          children: [

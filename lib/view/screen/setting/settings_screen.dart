@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/splash_provider.dart';
 import 'package:flutter_sixvalley_ecommerce/provider/theme_provider.dart';
-import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/color_resources.dart';
+import 'package:flutter_sixvalley_ecommerce/utill/app_constants.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/images.dart';
@@ -43,7 +43,7 @@ class SettingsScreen extends StatelessWidget {
                   onChanged: (bool isActive) =>Provider.of<ThemeProvider>(context, listen: false).toggleTheme(),
                   title: Text(getTranslated('dark_theme', context)!,
                       style: titilliumRegular.copyWith(fontSize: Dimensions.fontSizeLarge)),),
-                
+
                 if(AppConstants.languages.length > 1)
                   TitleButton(image: Images.language,
                     title: getTranslated('choose_language', context),

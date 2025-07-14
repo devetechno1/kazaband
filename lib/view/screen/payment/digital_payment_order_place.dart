@@ -65,16 +65,17 @@ class DigitalPaymentScreenState extends State<DigitalPaymentScreen> {
       ),
       onRefresh: () async {
         if (Platform.isAndroid) {
-          browser.webViewController.reload();
+          browser.webViewController?.reload();
         } else if (Platform.isIOS) {
-          browser.webViewController.loadUrl(urlRequest: URLRequest(url: await browser.webViewController.getUrl()));
+          browser.webViewController?.loadUrl(urlRequest: URLRequest(url: await browser.webViewController?.getUrl()));
         }
       },
     );
-    browser.pullToRefreshController = pullToRefreshController;
+    // browser.pullToRefreshController = pullToRefreshController;
+    browser = MyInAppBrowser(context,pullToRefreshController: pullToRefreshController);
 
     await browser.openUrlRequest(
-      urlRequest: URLRequest(url: Uri.parse(selectedUrl!)),
+      urlRequest: URLRequest(url: WebUri(selectedUrl!)),
       options: InAppBrowserClassOptions(
         inAppWebViewGroupOptions: InAppWebViewGroupOptions(
           // ibrahem test
@@ -134,8 +135,9 @@ class MyInAppBrowser extends InAppBrowser {
   MyInAppBrowser(this.context, {
     int? windowId,
     UnmodifiableListView<UserScript>? initialUserScripts,
+    PullToRefreshController? pullToRefreshController,
   })
-      : super(windowId: windowId, initialUserScripts: initialUserScripts);
+      : super(windowId: windowId, initialUserScripts: initialUserScripts,pullToRefreshController:pullToRefreshController );
 
   bool _canRedirect = true;
 

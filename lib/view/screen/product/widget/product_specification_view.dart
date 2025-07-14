@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
@@ -7,12 +6,11 @@ import 'package:flutter_sixvalley_ecommerce/utill/custom_themes.dart';
 import 'package:flutter_sixvalley_ecommerce/utill/dimensions.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/product/specification_screen.dart';
 import 'package:provider/provider.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 
 class ProductSpecification extends StatelessWidget {
   final String productSpecification;
-  const ProductSpecification({Key? key, required this.productSpecification}) : super(key: key);
+  const ProductSpecification({super.key, required this.productSpecification});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +18,6 @@ class ProductSpecification extends StatelessWidget {
 
 
 
-    if(Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
     return Column(crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
@@ -30,7 +27,7 @@ class ProductSpecification extends StatelessWidget {
 
 
         productSpecification.isNotEmpty ?
-        Expanded(child: Html(data: productSpecification??'',
+        Expanded(child: Html(data: productSpecification,
 
 
           style: {

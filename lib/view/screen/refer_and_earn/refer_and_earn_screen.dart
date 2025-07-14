@@ -16,10 +16,10 @@ import 'package:flutter_sixvalley_ecommerce/view/basewidget/custom_app_bar.dart'
 import 'package:flutter_sixvalley_ecommerce/view/basewidget/show_custom_snakbar.dart';
 import 'package:flutter_sixvalley_ecommerce/view/screen/refer_and_earn/widgets/refer_hint_view.dart';
 import 'package:provider/provider.dart';
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ReferAndEarnScreen extends StatelessWidget {
-  const ReferAndEarnScreen({Key? key}) : super(key: key);
+  const ReferAndEarnScreen({super.key});
   @override
   Widget build(BuildContext context) {
     final List<String> shareItem = [Images.share];
@@ -101,7 +101,7 @@ class ReferAndEarnScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(mainAxisAlignment: MainAxisAlignment.center,
                       children: shareItem.map((item) => GestureDetector(
-                        onTap: () => Share.share('Greetings, 6Valley is the best e-commerce platform in the country. If you are new to this website don’t forget to use "${Provider.of<ProfileProvider>(context, listen: false).userInfoModel?.referCode??''}" as the referral code while sign up into 6valley. ${'${Provider.of<SplashProvider>(context, listen: false).configModel?.refSignup}${Provider.of<ProfileProvider>(context, listen: false).userInfoModel?.referCode??''}'}',),
+                        onTap: () => Share.share('Greetings, ${AppConstants.appName} is the best e-commerce platform in the country. If you are new to this website don’t forget to use "${Provider.of<ProfileProvider>(context, listen: false).userInfoModel?.referCode??''}" as the referral code while sign up into devetechno. ${'${Provider.of<SplashProvider>(context, listen: false).configModel?.refSignup}${Provider.of<ProfileProvider>(context, listen: false).userInfoModel?.referCode??''}'}',),
                         child: Container(margin: const EdgeInsets.symmetric(horizontal: Dimensions.paddingSizeExtraSmall),
                           child: Image.asset(item, height: 45, width: 45),),
                       )).toList(),),

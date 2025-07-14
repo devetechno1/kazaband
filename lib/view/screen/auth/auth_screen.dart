@@ -78,7 +78,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                           Padding(padding: const EdgeInsets.all(Dimensions.marginSizeLarge),
                             child: Row(children: [
                               InkWell(onTap: () => authProvider.updateSelectedIndex(0),
-                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                                  child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
 
                                     Text(getTranslated('sign_up', context)!, style: authProvider.selectedIndex == 0 ?
                                     titleRegular.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeLarge) :
@@ -93,7 +93,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                               const SizedBox(width: Dimensions.paddingSizeExtraLarge),
 
                               InkWell(onTap: () => authProvider.updateSelectedIndex(1),
-                                  child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                                  child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
                                     Text(getTranslated('sign_in', context)!, style: authProvider.selectedIndex == 1 ?
                                     titleRegular.copyWith(color: Theme.of(context).primaryColor, fontSize: Dimensions.fontSizeLarge) : titleRegular.copyWith(fontSize: Dimensions.fontSizeLarge)),
                                     Container(height: 3, width: 25, margin: const EdgeInsets.only(top: 8),

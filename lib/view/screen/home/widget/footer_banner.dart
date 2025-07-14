@@ -16,6 +16,8 @@ class SingleBannersView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('${Provider.of<SplashProvider>(context,listen: false).baseUrls!.bannerImageUrl}'
+                  '/${bannerModel?.photo}');
     return Column(
       children: [
     Consumer<BannerProvider>(

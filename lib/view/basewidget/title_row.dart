@@ -57,7 +57,7 @@ class TitleRow extends StatelessWidget {
         child: Align(alignment: Alignment.center,
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
 
-              Padding(padding: const EdgeInsets.only(left: Dimensions.homePagePadding),
+              Padding(padding: const EdgeInsets.only(left: Dimensions.paddingSizeSmall,right: Dimensions.paddingSizeSmall),
                 child: Text(title!, style: titleHeader.copyWith(fontSize: MediaQuery.of(Get.context!).size.width * 0.044,
                     color: titleColor ?? (isFlash? Colors.white: Theme.of(context).textTheme.bodyLarge?.color))),),
 
@@ -126,7 +126,7 @@ class TitleRow extends StatelessWidget {
                       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                             isDetailsPage == null ? Text(getTranslated('VIEW_ALL', context)!,
                                 style: titilliumRegular.copyWith(color: Provider.of<ThemeProvider>(context, listen: false).darkTheme? Theme.of(context).hintColor : Theme.of(context).primaryColor,
-                                  fontSize: Dimensions.fontSizeDefault,)) : const SizedBox.shrink(),
+                                  fontSize: Dimensions.fontSizeLarge,)) : const SizedBox.shrink(),
                           ]),
                     ),
                   ):

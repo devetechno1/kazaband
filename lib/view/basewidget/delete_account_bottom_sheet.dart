@@ -44,7 +44,9 @@ class DeleteAccountBottomSheet extends StatelessWidget {
               textColor: Theme.of(context).textTheme.bodyLarge?.color,
               onTap: ()=> Navigator.pop(context),)),
             const SizedBox(width: Dimensions.paddingSizeDefault,),
-            SizedBox(width: 120,child: CustomButton(buttonText: '${getTranslated('delete', context)}',
+            SizedBox(width: 120,child: CustomButton(
+              
+              buttonText: '${getTranslated('delete', context)}',
                 backgroundColor: Theme.of(context).colorScheme.error,
                 onTap: (){
                   Provider.of<ProfileProvider>(context, listen: false).deleteCustomerAccount(context, int.parse(customerId)).then((condition) {

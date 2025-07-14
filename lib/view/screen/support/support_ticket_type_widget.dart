@@ -83,7 +83,7 @@ class TypeButton extends StatelessWidget {
 
       child: Padding(padding: const EdgeInsets.all(Dimensions.paddingSizeSmall),
         child: Column(mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center, children: [
         SizedBox(height: 20, child: Image.asset(icon!)),
         const SizedBox(height: Dimensions.paddingSizeSmall),

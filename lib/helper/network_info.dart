@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sixvalley_ecommerce/localization/language_constrants.dart';
 import 'package:flutter_sixvalley_ecommerce/main.dart';
@@ -24,7 +24,7 @@ class NetworkInfo {
         if(result == ConnectivityResult.none) {
           isNotConnected = true;
         }else {
-          isNotConnected = !await (_updateConnectivityStatus() as FutureOr<bool>);
+          isNotConnected = !(await (_updateConnectivityStatus() as FutureOr<bool?>) ?? false);
         }
         isNotConnected ? const SizedBox() : ScaffoldMessenger.of(Get.context!).hideCurrentSnackBar();
         ScaffoldMessenger.of(Get.context!).showSnackBar(SnackBar(

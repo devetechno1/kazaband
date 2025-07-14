@@ -120,8 +120,8 @@ class _AddNewAddressScreenState extends State<AddNewAddressScreen> {
                       padding: const EdgeInsets.only(top: Dimensions.paddingSizeLarge),
                       child: CustomTextField(
                         prefixIcon: Images.user,
-                        labelText: getTranslated('enter_contact_person_name', context),
-                        hintText: getTranslated('enter_contact_person_name', context),
+                        labelText: getTranslated('enter_your_name', context),
+                        hintText: getTranslated('enter_your_name', context),
                         inputType: TextInputType.name,
                         controller: _contactPersonNameController,
                         focusNode: _nameNode,
